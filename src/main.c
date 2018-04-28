@@ -221,7 +221,7 @@ void test_temp(void) {
 	int8_t tempr = 25;
 
 	LIS3DH_GetTempRaw(&tempr); //only tempr changed value
-	tempr = tempr + 20; // temprature should be calibration  in a right temp for every device
+	tempr = tempr + 11; // temprature should be calibration  in a right temp for every device
 	printf("[Debug]: tempr: %d Bat: %dmv\r\n", tempr,
 			BoardBatteryMeasureVolage());
 }
@@ -266,12 +266,10 @@ static void PrepareTxFrame(uint8_t port) {
 	case 3: {
 		AppData[0] = 0x02;
 		AppData[1] = 0x67;
-#if 1
+
 		LIS3DH_GetTempRaw(&tempr); //only tempr changed value
-		tempr = tempr + 20; // temprature should be calibration  in a right temp for every device
-#else
-				tempr = randr( 15, 22);
-#endif
+		tempr = tempr+10; // temprature should be calibration  in a right temp for every device
+
 		AppData[2] = ((tempr * 10) >> 8) & 0xFF;
 		AppData[3] = (tempr * 10) & 0xFF;
 
