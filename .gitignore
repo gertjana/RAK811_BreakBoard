@@ -6,3 +6,6 @@
 .vscode/launch.json
 .pioenvs
 .piolibdeps
+.clang_complete
+.gcc-flags.json
+src/TTNKeys.h

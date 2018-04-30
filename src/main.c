@@ -22,6 +22,7 @@
 #include "LoRaMac.h"
 #include "Region.h"
 #include "Commissioning.h"
+#include "TTNkeys.h" // do not commit this
 
 /*!
  * Defines the application data transmission duty cycle. 5s, value in [ms].
@@ -214,7 +215,7 @@ void test_gps(void) {
 	uint8_t ret;
 	ret = GpsGetLatestGpsPositionDouble(&latitude, &longitude);
 	altitudeGps = GpsGetLatestGpsAltitude(); // in m
-	//	printf("[Debug]: latitude: %f, longitude: %f , altitudeGps: %d \n", latitude, longitude, altitudeGps);	    	
+	//	printf("[Debug]: latitude: %f, longitude: %f , altitudeGps: %d \n", latitude, longitude, altitudeGps);
 }
 
 void test_temp(void) {
@@ -896,12 +897,12 @@ int main(void) {
 #define LED2_PIN                                GPIO_PIN_4
 #define LED2_GPIO_PORT                          GPIOB
 #define LED2_GPIO_CLK_ENABLE()                  __HAL_RCC_GPIOB_CLK_ENABLE()
-void LED_Init(); 
+void LED_Init();
 
 int main(void) {
   HAL_Init();
   LED_Init();
-  
+
   while (1)
   {
     HAL_GPIO_TogglePin(LED1_GPIO_PORT, LED1_PIN);
