@@ -2,7 +2,7 @@
 
 Complete instructions here [running in windows](./WINDOWS.md)
 
-Code from here 
+Code from here
 https://github.com/RAKWireless/RAK811_BreakBoard
 then adapted to platformio
 
@@ -22,13 +22,19 @@ If you use, platformio ide, press
 
     cp rak811.json ~/.platformio/platforms/ststm32/boards/rak811.json
 
-If you do not have this directory, .platformio/platforms/ststm32 try, 
-    
+If you do not have this directory, .platformio/platforms/ststm32 try,
+
     pio platform install ststm32
 
 
+# TheThingsNetwork configuration
+
+copy `TTNKeys_Template.h` to `TTNkeys.h`
+
+Create and application and a OTAA Device in the TTN console and fill in the LORAWAN_DEVICE_EUI, LORAWAN_APPLICATION_EUI and LORAWAN_APPLICATION_KEY, in that file
+
 # compile
-    
+
     pio run
 
 

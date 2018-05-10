@@ -22,7 +22,7 @@
 #include "LoRaMac.h"
 #include "Region.h"
 #include "Commissioning.h"
-#include "TTNkeys.h" // do not commit this
+#include "TTNkeys.h"
 
 /*!
  * Defines the application data transmission duty cycle. 5s, value in [ms].
