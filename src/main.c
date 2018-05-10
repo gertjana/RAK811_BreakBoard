@@ -50,7 +50,7 @@
  *
  * \remark Please note that when ADR is enabled the end-device should be static
  */
-#define LORAWAN_ADR_ON                              1
+#define LORAWAN_ADR_ON                              0
 
 #if defined( REGION_EU868 )
 
@@ -209,14 +209,14 @@ void dump_hex2str(uint8_t *buf, uint8_t len) {
 /*!
  * \brief   Prepares the payload of the frame
  */
-void test_gps(void) {
-	double latitude, longitude = 0;
-	int16_t altitudeGps = 0xFFFF;
-	uint8_t ret;
-	ret = GpsGetLatestGpsPositionDouble(&latitude, &longitude);
-	altitudeGps = GpsGetLatestGpsAltitude(); // in m
-	//	printf("[Debug]: latitude: %f, longitude: %f , altitudeGps: %d \n", latitude, longitude, altitudeGps);
-}
+// void test_gps(void) {
+// 	double latitude, longitude = 0;
+// 	int16_t altitudeGps = 0xFFFF;
+// 	uint8_t ret;
+// 	ret = GpsGetLatestGpsPositionDouble(&latitude, &longitude);
+// 	altitudeGps = GpsGetLatestGpsAltitude(); // in m
+// 	//	printf("[Debug]: latitude: %f, longitude: %f , altitudeGps: %d \n", latitude, longitude, altitudeGps);
+// }
 
 void test_temp(void) {
 	int8_t tempr = 25;
